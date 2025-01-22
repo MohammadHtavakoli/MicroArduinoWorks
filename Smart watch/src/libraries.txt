@@ -1,0 +1,12 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+# Automatically added based on includes:
+Adafruit GFX Library
+Keypad
+RTClib
+DHT sensor library
+
+Adafruit SSD1306
+TM1637_RT
+TM1637

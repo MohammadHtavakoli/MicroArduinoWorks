@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 19.8, "left": -186, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "ssd1306",
+      "top": -160.06,
+      "left": -9.37,
+      "attrs": { "i2c-address": "0x3C" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -191.7,
+      "left": -139.8,
+      "attrs": { "temperature": "61.2", "humidity": "61" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": 289.5, "left": 72.7, "attrs": {} },
+    { "type": "wokwi-membrane-keypad", "id": "keypad1", "top": -290, "left": 197.6, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": 90.6, "left": -364.7, "attrs": {} },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "sevseg1",
+      "top": -38.44,
+      "left": -434.57,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 79.2,
+      "left": 433.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "ssd1306:GND", "mega:GND.2", "black", [ "v-86.4", "h-240", "v518.4", "h201.6" ] ],
+    [ "ssd1306:VCC", "mega:5V", "red", [ "v-96", "h-268.65", "v537.6", "h211.2", "v-9.6" ] ],
+    [ "ssd1306:SCL", "mega:21", "blue", [ "v-19.2", "h57.9" ] ],
+    [ "ssd1306:SDA", "mega:20", "blue", [ "v-9.6", "h86.47" ] ],
+    [ "dht1:VCC", "mega:5V", "red", [ "v326.4", "h86.4" ] ],
+    [ "dht1:GND", "mega:GND.1", "black", [ "v0", "h28.8" ] ],
+    [ "dht1:SDA", "mega:2", "#8f4814", [ "v48", "h163.3" ] ],
+    [ "keypad1:R1", "mega:22", "green", [ "v0" ] ],
+    [ "keypad1:R2", "mega:23", "green", [ "v-9.6", "h-192.4" ] ],
+    [ "keypad1:R3", "mega:24", "green", [ "v0" ] ],
+    [ "keypad1:R4", "mega:25", "green", [ "v0" ] ],
+    [ "keypad1:C1", "mega:26", "green", [ "v0" ] ],
+    [ "keypad1:C2", "mega:27", "green", [ "v0" ] ],
+    [ "keypad1:C3", "mega:28", "green", [ "v0" ] ],
+    [ "keypad1:C4", "mega:29", "green", [ "v0" ] ],
+    [ "sevseg1:DIO", "mega:3", "gray", [ "h0" ] ],
+    [ "sevseg1:VCC", "mega:5V", "red", [ "h105.6", "v194.7" ] ],
+    [ "sevseg1:GND", "mega:GND.1", "black", [ "h0" ] ],
+    [ "sevseg1:CLK", "mega:52", "gray", [ "h384", "v153.6" ] ],
+    [ "rtc1:5V", "mega:5V", "red", [ "h-96", "v134", "h422.4", "v0", "h9.6" ] ],
+    [ "rtc1:GND", "mega:GND.2", "black", [ "h-28.8", "v-28.8", "h345.6" ] ],
+    [ "ultrasonic1:VCC", "mega:VIN", "red", [ "v19.2", "h-192" ] ],
+    [ "ultrasonic1:GND", "mega:GND.5", "black", [ "v28.8", "h66", "v-220.8" ] ],
+    [ "ultrasonic1:TRIG", "mega:4", "cyan", [ "v38.4", "h-154" ] ],
+    [ "ultrasonic1:ECHO", "mega:5", "cyan", [ "v57.6", "h-144.8" ] ],
+    [ "rtc1:SCL", "mega:21", "limegreen", [ "h0" ] ],
+    [ "rtc1:SDA", "mega:20", "limegreen", [ "h0" ] ],
+    [ "bz1:1", "mega:GND.5", "black", [ "v0" ] ],
+    [ "bz1:2", "mega:53", "magenta", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
